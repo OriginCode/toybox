@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+__author__ = "OriginCode"
+
 src = input('Input original text:\n> ')
 out = ""
 
