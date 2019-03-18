@@ -1,6 +1,4 @@
-'''
-This file is for importing
-'''
+# This file is for importing
 
 # counter.py
 import yaml
@@ -23,7 +21,7 @@ def counter(username, repo_dir):
     # Initialize the count value.
     count = 0
 
-    # Traverse the dir and find the maintaining packages by reading the lilac.yaml.
+    # Traverse the dir and find the maintaining packages.
     for x in range(len(l)):
         try:
             config = l[x] / "lilac.yaml"
@@ -43,6 +41,5 @@ def counter(username, repo_dir):
 def inverting(src):
     out = ""
     for x in range(len(src)):
-        w = src[len(src) - x - 1]
-        out = out + w
+        out = out + src[len(src) - x - 1]
     return out
