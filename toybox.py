@@ -4,6 +4,11 @@
 import yaml
 from pathlib import Path
 
+# owm_cityid.py
+import json
+import gzip
+import requests
+
 __author__ = "OriginCode"
 
 def addspace(src):
@@ -43,3 +48,21 @@ def inverting(src):
     for x in range(len(src)):
         out = out + src[len(src) - x - 1]
     return out
+
+class owm_cityid:
+    def update():
+        d = {}
+
+        src = requests.get('http://bulk.openweathermap.org/sample/city.list.json.gz').content
+        with gzip.open(src) as f:
+            j = json.loads(f.read())
+        for x in range(len(j)):
+            d.update({j[x]['name']: j[x]['id']})
+        out = json.dumps(d, sort_keys=True, indent=4)
+        with open('./city2id.json', 'w') as f:
+            f.write(out)
+    
+    def search(src):
+        with open('./city2id.json') as f:
+            j = json.load(f)
+        return j[src]
