@@ -2,7 +2,9 @@
 
 __author__ = "OriginCode"
 
-src = input('Input original text:\n> ')
+import sys
+
+src = sys.argv[1]
 out = ""
 
 for x in range(len(src)):

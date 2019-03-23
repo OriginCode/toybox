@@ -1,5 +1,7 @@
 # This file is for importing
 
+__author__ = "OriginCode"
+
 # counter.py
 import yaml
 from pathlib import Path
@@ -8,8 +10,6 @@ from pathlib import Path
 import json
 import gzip
 import requests
-
-__author__ = "OriginCode"
 
 def addspace(src):
     out = ""
