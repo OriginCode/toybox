@@ -6,6 +6,9 @@ __author__ = "OriginCode"
 import yaml
 from pathlib import Path
 
+# eqgen.py
+import random
+
 # owm_cityid.py
 import json
 import gzip
@@ -69,3 +72,16 @@ class owm_cityid:
         with open('./city2id.json') as f:
             j = json.load(f)
         return j[src]
+
+def eqgen(a, b, c):    # Usage: a for the maximum num in the equation, b for the maximum result, c for how many results to return.
+    l = []
+    r = []
+    for x in range(1, a + 1):
+        for y in range(1, a + 1):
+            if x + y <= b:
+                l.append(str(x) + ' + ' + str(y))
+
+    for i in range(c):
+        r.append(l[random.randrange(len(l) - 1)])
+    
+    return r

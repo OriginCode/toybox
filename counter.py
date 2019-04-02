@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+__author__ = "OriginCode"
+
 import yaml
 from pathlib import Path
 
