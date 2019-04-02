@@ -28,6 +28,7 @@ def counter(username, repo_dir):
 
     # Initialize the count value.
     count = 0
+    pkgs = []
 
     # Traverse the dir and find the maintaining packages.
     for x in range(len(l)):
@@ -35,7 +36,6 @@ def counter(username, repo_dir):
             config = l[x] / "lilac.yaml"
             with config.open() as f:
                 maintainers = yaml.load(f)['maintainers']
-            pkgs = []
             for y in range(len(maintainers)):
                 m = maintainers[y]['github']
                 if m == username:
