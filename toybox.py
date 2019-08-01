@@ -85,3 +85,10 @@ def eqgen(a, b, c):    # Usage: a for the maximum num in the equation, b for the
         r.append(l[random.randrange(len(l) - 1)])
     
     return r
+
+def accelerator(src):
+    out = ""
+    for x in range(len(src)):
+        out = out + src[x] + " " * (x + 1)
+        out = out[0:len(out) - x - 1]
+    return out
