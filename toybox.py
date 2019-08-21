@@ -15,11 +15,7 @@ import gzip
 import requests
 
 def addspace(src):
-    out = ""
-    for x in range(len(src)):
-        out = out + src[x] + " "
-    out = out[0:len(out) - 1]
-    return out
+    return ' '.join([s for s in src])
 
 def counter(username, repo_dir):
     # Read the repo dir.
@@ -47,10 +43,7 @@ def counter(username, repo_dir):
     return pkgs, count
 
 def inverting(src):
-    out = ""
-    for x in range(len(src)):
-        out = out + src[len(src) - x - 1]
-    return out
+    return src[::-1]
 
 class owm_cityid:
     def update():
