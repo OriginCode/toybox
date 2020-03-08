@@ -20,7 +20,7 @@ for x in range(len(l)):
     try:
         config = l[x] / "lilac.yaml"
         with config.open() as f:
-            maintainers = yaml.load(f)['maintainers']
+            maintainers = yaml.load(f, Loader=yaml.BaseLoader)['maintainers']
         for y in range(len(maintainers)):
             m = maintainers[y]['github']
             if m == USERNAME:
